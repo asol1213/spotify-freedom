@@ -1,0 +1,13 @@
+{
+  "name": "music-migration",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "export": "node export-spotify.js",
+    "download": "node download-songs.js",
+    "setup-navidrome": "docker compose up -d"
+  },
+  "dependencies": {
+    "open": "^10.0.0"
+  }
+}

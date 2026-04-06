@@ -1,0 +1,5 @@
+node_modules/
+music/
+*.json
+!package.json
+.env
