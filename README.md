@@ -41,7 +41,7 @@ docker compose up -d
 node export-spotify.js "https://open.spotify.com/playlist/YOUR_PLAYLIST_ID"
 ```
 
-Multiple playlists at once:
+Multiple playlists and albums at once:
 
 ```bash
 node export-spotify.js \
@@ -50,7 +50,30 @@ node export-spotify.js \
   "https://open.spotify.com/album/ALBUM_LINK"
 ```
 
-Albums work too.
+### Options
+
+```
+--shuffle          Shuffle download order
+--format=FORMAT    Audio format: mp3 (default), opus, flac, m4a, wav
+--quality=QUALITY  Audio quality: 0 = best (default), 5 = medium, 9 = worst
+--parallel=N       Download N songs at once (default: 1, max: 5)
+--dry-run          Show tracks without downloading
+--playlist-only    Only create M3U playlist, skip download
+--search           Download individual songs by search query
+```
+
+### Examples
+
+```bash
+# Download in FLAC with 3 parallel downloads
+node export-spotify.js --format=flac --parallel=3 "https://open.spotify.com/playlist/..."
+
+# Preview what's in a playlist
+node export-spotify.js --dry-run "https://open.spotify.com/playlist/..."
+
+# Download individual songs
+node export-spotify.js --search "NF - The Search" "Woodkid - Run Boy Run"
+```
 
 ### Listen on your phone
 
